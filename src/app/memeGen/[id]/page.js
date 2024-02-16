@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import MemeGen from './MemeGen'
 
-const memeGen = (props) => {
+const MemeGenapi = (props) => {
    
    
 //     function change(text_1,text_2) {
@@ -43,4 +43,4 @@ const memegen=async(id,text1,text2) => {
   )
 }
 
-export default memeGen
+export default MemeGenapi
