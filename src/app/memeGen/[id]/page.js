@@ -14,8 +14,8 @@ const MemeGenapi = (props) => {
 //     console.log(text1,text2)
 // }
 const [result, setresult] = useState({})
-const memegen=async(id,text1,text2) => { 
-        const  memegenresp=await fetch(`https://api.imgflip.com/caption_image?template_id=${id}&username=pefitoc&password=sabeeb12&text0=${text1}&text1=${text2}`)
+const memegen=async(id,text1,text2,text3,text4,text5) => { 
+        const  memegenresp=await fetch(`https://api.imgflip.com/caption_image?template_id=${id}&username=pefitoc&password=sabeeb12&boxes[0][text]=${text1}&boxes[1][text]=${text2}&boxes[2][text]=${text3}&boxes[3][text]=${text4}&boxes[4][text]=${text5}`)
     const memegenresult=await memegenresp.json()
    return ( memegenresult.data)  
 
@@ -39,7 +39,7 @@ const memegen=async(id,text1,text2) => {
        }
        searchmeme(props?.params?.id)
   return (
-    <MemeGen data={result} generate={memegen}  searchmeme={memedetail}/>
+    <MemeGen data={result} generate={memegen}   searchmeme={memedetail}/>
   )
 }
 
